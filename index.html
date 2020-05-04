@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://statics-qr.leshuazf.com/hsy-v4/static/css/weixin.ec845e8542403d54637f.css">
+  <script>
+    var showError = function(e){
+      alert(e)
+    }
+  </script>
+</head>
+<body>
+  <div class="app">
+    <div>my pwa333aa</div>
+    <div>just a test</div>
+  </div>
+  <script src="./src/index.js"></script>
+  
+  <script>
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js', { scope: '/' })
+        .then(function(registration) {
+              console.log('Service Worker Registered');
+        }).catch(function(err){
+          console.log(err)
+        });
+
+      navigator.serviceWorker.ready.then(function(registration) {
+         console.log('Service Worker Ready');
+      });
+    }
+  </script>
+  <!-- <script src="https://statics-qr.leshuazf.com/hsy-v4/static/js/weixin.6104a00674a9ff7b29db.js" onerror="showError"></script> -->
+</body>
+</html>
